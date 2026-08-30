@@ -1,8 +1,8 @@
-**# DAY 2 — SIMPLE CALCULATOR**
+# DAY 2 — SIMPLE CALCULATOR
 
 A simple command-line calculator built using Python.
 
-**## ABOUT**
+## ABOUT
 
 The program takes two integers and an operator symbol from the user.
 
@@ -17,7 +17,7 @@ The calculator currently supports:
 
 Invalid integer inputs are handled using exception handling.
 
-**## CONCEPTS PRACTICED**
+## CONCEPTS PRACTICED
 
 * Functions
 * Function parameters
@@ -29,7 +29,7 @@ Invalid integer inputs are handled using exception handling.
 * `ValueError`
 * Variables
 
-**## HOW TO RUN**
+## HOW TO RUN
 
 Make sure Python is installed, then run:
 
