@@ -4,20 +4,19 @@ options=[("yellow","blue","pink","green"), ("michael","jim","kelly","dwight"),(5
 x = list(questions.keys())
 y = list(questions.values())
 
-right=True
 i=0
 score=0
-while right==True and i<5:
+while i<5:
     print("\n")
     print(f"Question {i+1}:\n{x[i]}")
     print(f"Options are {options[i]}")
     answer= input("your answer: ")
-    if answer==y[i]:
+    if answer.lower()==y[i]:
         print("CORRECT\n\n")
-        score+=10
+        score+=1
     else:
         print(f"WRONG ({y[i]} is the correct answer)\n\n")
     i+=1
 
-print(f"\nYour score: {score}")
+print(f"\nYour score: {score}/5")
 print("Quiz over")
