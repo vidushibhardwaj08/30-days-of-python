@@ -14,9 +14,10 @@ while i<5:
     if answer.lower()==y[i]:
         print("CORRECT\n\n")
         score+=1
+        print(f"Current Score: {score}/5")
     else:
         print(f"WRONG ({y[i]} is the correct answer)\n\n")
     i+=1
 
-print(f"\nYour score: {score}/5")
+print(f"\nTotal score: {score}/5")
 print("Quiz over")
