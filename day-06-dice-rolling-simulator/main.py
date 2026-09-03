@@ -1,15 +1,29 @@
+import tkinter as tk
 import random
 
 def roll_die():
     x= random.randint(1,6)
-    return x
+    result_label.config(text=f"You rolled: {x}")
 
-print("DICE ROLLING SIMULATOR")
-answer= input("Do you want to roll the dice? (y/n): ")
+root = tk.Tk()
+root.title("Let's roll")
 
-while answer.lower()=='y':
-    result=roll_die()
-    print(f"You rolled: {result}")
-    answer= input("Do you want to roll the dice? (y/n): ")
+label = tk.Label(
+    root, 
+    text="DICE ROLLING SIMULATOR",
+    font=("Arial",15)
+    )
+label.pack()
 
-print("Thanks for playing!!")
+result_label = tk.Label(
+    root,
+    text="Click Roll Dice!"
+)
+
+result_label.pack()
+
+button = tk.Button(root, text="Roll Dice", command=roll_die)
+button.pack()
+
+root.mainloop()
+
