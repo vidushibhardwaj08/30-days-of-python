@@ -22,8 +22,8 @@ result_label = tk.Label(
 
 result_label.pack()
 
-# button = tk.Button(root, text="Roll Dice", command=roll_die)
-# button.pack()
+button = tk.Button(root, text="Roll Dice", command=roll_die)
+button.pack()
 
 root.mainloop()
 
