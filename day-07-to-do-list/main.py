@@ -8,15 +8,23 @@ def addTask(todo,userInput):
         return todo
 
 def deleteTask(todo,userInput):
-    while userInput=='y':
-        task=int(input("Enter the task number you want to delete: "))
-        todo.pop(task)
+    while userInput.lower()=='y':
+        try:
+            task=int(input("Enter the task number you want to delete: "))
+
+            if 1<= task <= len(todo):
+                deleted_task=todo.pop(task-1)
+                print(f"{deleted_task} deleted succesfully")
+            else:
+                print("Invalid task number")
+        except ValueError:
+            print("please enter a valid number")
+
         userInput=input("Do you want to delete another task: ")
-    else:
         return todo
 
 print("==== TO-DO LIST ====")
-todo=["Empty list"]
+todo=[]
 print(todo)
 
 updateTodo=int(input("Enter the updation you want to do:\n"
@@ -30,4 +38,4 @@ match updateTodo:
     case _:
         print("Invalid input")
 
-print(todo[1:])
+print(todo)
