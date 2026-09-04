@@ -14,14 +14,14 @@ def deleteTask(todo,userInput):
 
             if 1<= task <= len(todo):
                 deleted_task=todo.pop(task-1)
-                print(f"{deleted_task} deleted succesfully")
+                print(f"{deleted_task} deleted successfully")
             else:
                 print("Invalid task number")
         except ValueError:
             print("please enter a valid number")
 
         userInput=input("Do you want to delete another task: ")
-        return todo
+    return todo
 
 print("==== TO-DO LIST ====")
 todo=[]
