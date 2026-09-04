@@ -4,7 +4,6 @@ def addTask(todo,userInput):
         todo.append(task)
         print("Task added")
         userInput=input("Do you want to add another task: ")
-        return addTask(todo,userInput)
     else:
         return todo
 
@@ -13,7 +12,6 @@ def deleteTask(todo,userInput):
         task=int(input("Enter the task number you want to delete: "))
         todo.pop(task)
         userInput=input("Do you want to delete another task: ")
-        return deleteTask(todo,userInput)
     else:
         return todo
 
