@@ -19,7 +19,9 @@ print("==== TO-DO LIST ====")
 todo=["Empty list"]
 print(todo)
 
-updateTodo=int(input("Enter the updation you want to do: "))
+updateTodo=int(input("Enter the updation you want to do:\n"
+    "1. Add Task\n"
+    "2. Delete Task\n"))
 match updateTodo:
     case 1:
         todo= addTask(todo,'y')
