@@ -23,18 +23,26 @@ def deleteTask(todo,userInput):
         userInput=input("Do you want to delete another task: ")
     return todo
 
+def viewTask(todo, userInput):
+    if len(todo)==0:
+        print("No pending tasks")
+    else:
+        for i in range(0,len(todo)):
+            print(f"{i+1}. {todo[i]}")
 print("==== TO-DO LIST ====")
-todo=[]
-print(todo)
+todo=["resume", "workout", "mock test"]
 
 updateTodo=int(input("Enter the updation you want to do:\n"
     "1. Add Task\n"
-    "2. Delete Task\n"))
+    "2. Delete Task\n"
+    "3. View Task\n"))
 match updateTodo:
     case 1:
         todo= addTask(todo,'y')
     case 2:
         todo= deleteTask(todo, 'y')
+    case 3:
+        todo= viewTask(todo, 'y')
     case _:
         print("Invalid input")
 
