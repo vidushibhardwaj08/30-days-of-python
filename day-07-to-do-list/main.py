@@ -35,6 +35,23 @@ def viewTask(todo):
             i += 1
         print("\n")
 
+def editTaskStatus(todo):
+    try:
+        task_index=int(input("Enter the task index for status update: "))
+
+        if 1 <= task_index <= len(todo):
+            key_to_update= list(todo.keys())[task_index - 1]
+            if todo[key_to_update] == "pending":
+                todo[key_to_update] = "completed"
+            else:
+                todo[key_to_update] = "pending"
+            print("Status updated")
+        else:
+            print("Index is wrong")
+    except ValueError:
+        print("Invalid input")
+
+
 print("==== TO-DO LIST ====")
 todo={"resume":"pending", "workout":"pending", "mock test":"completed"}
 
@@ -43,7 +60,9 @@ while True:
         updateTodo=int(input("Enter the updation you want to do:\n"
             "1. Add Task\n"
             "2. Delete Task\n"
-            "3. View Task\n"))
+            "3. View Task\n"
+            "4. Edit Task Status\n"
+            "5. Exit\n"))
     except ValueError:
         print("Please enter a valid number\n")
         continue
@@ -55,8 +74,12 @@ while True:
             todo= deleteTask(todo, 'y')
         case 3:
             viewTask(todo)
+        case 4:
+            editTaskStatus(todo)
+        case 5:
+            print("Exiting To-Do List")
+            break
         case _:
             print("Invalid input")
-            exit()
 
 
