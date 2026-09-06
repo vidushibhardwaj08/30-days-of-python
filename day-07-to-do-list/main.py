@@ -35,7 +35,7 @@ def viewTask(todo):
             print(f"{i+1}. {todo[i]}")
 
 print("==== TO-DO LIST ====")
-todo=["resume", "workout", "mock test"]
+todo={"resume":"pending", "workout":"pending", "mock test":"completed"}
 
 while True:
     try:
