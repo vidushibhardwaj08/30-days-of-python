@@ -33,16 +33,20 @@ def viewTask(todo):
     else:
         for i in range(len(todo)):
             print(f"{i+1}. {todo[i]}")
-            
+
 print("==== TO-DO LIST ====")
 todo=["resume", "workout", "mock test"]
 
 while True:
-
-    updateTodo=int(input("Enter the updation you want to do:\n"
-        "1. Add Task\n"
-        "2. Delete Task\n"
-        "3. View Task\n"))
+    try:
+        updateTodo=int(input("Enter the updation you want to do:\n"
+            "1. Add Task\n"
+            "2. Delete Task\n"
+            "3. View Task\n"))
+    except ValueError:
+        print("Enter a valid number")
+        updateTodo="_"
+    
     match updateTodo:
         case 1:
             todo= addTask(todo,'y')
