@@ -1,8 +1,8 @@
 def addTask(todo,userInput):
     while userInput.lower()=='y':
         task=input("Enter the task you want to add: ")
-        todo.append(task)
-        print("Task added")
+        todo.update({task:"pending"})
+        print("Task added\n")
         userInput=input("Do you want to add another task: ")
     else:
         return todo
@@ -10,15 +10,12 @@ def addTask(todo,userInput):
 def deleteTask(todo,userInput):
     while userInput.lower()=='y':
         try:
-            task=int(input("Enter the task number you want to delete: "))
+            task_index=int(input("Enter the task number you want to delete: "))
 
-            if not todo:
-                print("List is empty")
-                return todo
-
-            if 1<= task <= len(todo):
-                deleted_task=todo.pop(task-1)
-                print(f"{deleted_task} deleted successfully")
+            if 1<= task_index <= len(todo):
+                key_to_delete=list(todo.keys())[task_index - 1]
+                todo.pop(key_to_delete)
+                print(f"{key_to_delete} deleted successfully\n")
             else:
                 print("Invalid task number")
         except ValueError:
@@ -29,10 +26,14 @@ def deleteTask(todo,userInput):
 
 def viewTask(todo):
     if len(todo)==0:
-        print("No pending tasks")
+        print("No tasks")
     else:
-        for i in range(len(todo)):
-            print(f"{i+1}. {todo[i]}")
+        print("S.No.\tTASK\t\tSTATUS")
+        i=1
+        for key, value in todo.items():
+            print(f"{i}\t{key}\t\t{value}")
+            i += 1
+        print("\n")
 
 print("==== TO-DO LIST ====")
 todo={"resume":"pending", "workout":"pending", "mock test":"completed"}
@@ -44,9 +45,9 @@ while True:
             "2. Delete Task\n"
             "3. View Task\n"))
     except ValueError:
-        print("Enter a valid number")
-        updateTodo="_"
-    
+        print("Please enter a valid number\n")
+        continue
+
     match updateTodo:
         case 1:
             todo= addTask(todo,'y')
@@ -57,3 +58,5 @@ while True:
         case _:
             print("Invalid input")
             exit()
+
+
