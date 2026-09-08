@@ -33,6 +33,21 @@ def searchContact():
     else:
         print("Contact not found.")
 
+def updateContact():
+    name = input("Enter name of contact to update: ")
+
+    if name not in contacts:
+        print("Contact not found")
+        return
+
+    phone = input("Enter new phone number: ")
+    email = input("Enter new email: ")
+
+    contacts[name]["phone"] = phone
+    contacts[name]["email"] = email
+
+    print("Contact updated successfully.")
+    
 while True:
     print("""    1. Add Contact
     2. View All Contacts
@@ -49,6 +64,8 @@ while True:
         viewContacts()
     elif userInput==3:
         searchContact()
+    elif userInput==4:
+        updateContact()
     if userInput==6:
         break
 
