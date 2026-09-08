@@ -47,7 +47,16 @@ def updateContact():
     contacts[name]["email"] = email
 
     print("Contact updated successfully.")
-    
+
+def deleteContact():
+    name = input("Enter name of contact to delete: ")
+
+    if name in contacts:
+        contacts.pop(name)
+        print("Contact deleted successfully")
+    else:
+        print("Contact not found")
+
 while True:
     print("""    1. Add Contact
     2. View All Contacts
@@ -66,6 +75,8 @@ while True:
         searchContact()
     elif userInput==4:
         updateContact()
-    if userInput==6:
+    elif userInput==5:
+        deleteContact()
+    elif userInput==6:
         break
 
