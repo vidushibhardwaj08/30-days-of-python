@@ -22,7 +22,17 @@ def viewContacts():
         print("\nName:", name)
         print("Phone:", details["phone"])
         print("Email:", details["email"])
-    
+
+def searchContact():
+    name = input("Enter name to search: ")
+
+    if name in contacts:
+        print("\nName:", name)
+        print("Phone:", contacts[name]["phone"])
+        print("Email:", contacts[name]["email"])
+    else:
+        print("Contact not found.")
+
 while True:
     print("""    1. Add Contact
     2. View All Contacts
@@ -37,7 +47,8 @@ while True:
         addContact()
     elif userInput==2:
         viewContacts()
+    elif userInput==3:
+        searchContact()
     if userInput==6:
         break
 
-print(contacts)
