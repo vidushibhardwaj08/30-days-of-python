@@ -23,5 +23,10 @@ while True:
 
     userInput = int(input("Choose an option: "))
 
+    if userInput==1:
+        addContact()
+
     if userInput==6:
         break
+
+print(contacts)
