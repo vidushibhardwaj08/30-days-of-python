@@ -12,10 +12,14 @@ def addExpense():
     expenseList.append(new_expense)
     print(f"{description} added in expense list")
 
-
+def viewExpense():
+    for expense in expenseList:
+        print(f"\nName: {expense["name"]}")
+        print(f"Amount: {expense["amount"]}")
+        print(f"Category: {expense["category"]}")
 
 while True:
-    choice=int(input("Select an option: " \
+    choice=int(input("\nSelect an option: " \
 "\n1. Add an expense" \
 "\n2. View all expenses" \
 "\n3. Calculate total expenses" \
@@ -24,7 +28,8 @@ while True:
 "\n6. Exit\n"))
     if choice==1:
         addExpense()
+    elif choice==2:
+        viewExpense()
     elif choice==6:
         break
 
-print(expenseList)
