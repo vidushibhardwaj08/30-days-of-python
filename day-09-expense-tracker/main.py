@@ -1,9 +1,30 @@
 print("\nEXPENSE TRACKER\n")
 
-print("Select an option: " \
-"1. Add an expense" \
-"2. View all expenses" \
-"3. Calculate total expenses" \
-"4. View expenses by category" \
-"5. Delete an expense" \
-"6. Exit")
+expenseList=[]
+
+def addExpense():
+    print("im here")
+    description= input("Enter expense description: ")
+    amount= input("Enter expense amount: ")
+    category= input("Choose a category: ")
+
+    new_expense={"name":description,"amount":amount,"category":category}
+    expenseList.append(new_expense)
+    print(f"{description} added in expense list")
+
+
+
+while True:
+    choice=int(input("Select an option: " \
+"\n1. Add an expense" \
+"\n2. View all expenses" \
+"\n3. Calculate total expenses" \
+"\n4. View expenses by category" \
+"\n5. Delete an expense" \
+"\n6. Exit\n"))
+    if choice==1:
+        addExpense()
+    elif choice==6:
+        break
+
+print(expenseList)
