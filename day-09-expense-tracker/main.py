@@ -18,6 +18,13 @@ def viewExpense():
         print(f"Amount: {expense["amount"]}")
         print(f"Category: {expense["category"]}")
 
+def totalExpense():
+    sum=0
+    for expense in expenseList:
+        toAdd=int(expense["amount"])
+        sum=sum+toAdd
+    return sum
+
 while True:
     choice=int(input("\nSelect an option: " \
 "\n1. Add an expense" \
@@ -30,6 +37,9 @@ while True:
         addExpense()
     elif choice==2:
         viewExpense()
+    elif choice==3:
+        sum=totalExpense()
+        print(f"Total expense= {sum}")
     elif choice==6:
         break
 
